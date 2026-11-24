@@ -12,6 +12,31 @@
 <meta property="og:image" content="foto-1.webp">
 <style>html{scroll-behavior:smooth}body{margin:0;background:#FFFFFF}img{max-width:100%}
 .ai-landing a{color:#0F6CB8}.ai-landing a:hover{color:#0A4F88}
+/* Бонус: анимированные карусели в чате */
+.ac-chat{width:100%;max-width:340px;background:#FFFFFF;border-radius:28px;padding:18px;box-sizing:border-box;box-shadow:0 30px 60px rgba(0,0,0,0.35);display:flex;flex-direction:column;gap:12px;font-size:14px;line-height:1.35}
+.ac-head{display:flex;align-items:center;gap:10px;padding-bottom:10px;border-bottom:1px solid #E4F0FA}
+.ac-ava{width:34px;height:34px;border-radius:50%;background:#B8F03A;display:flex;align-items:center;justify-content:center;font-family:Unbounded,sans-serif;font-weight:700;font-size:12px;color:#0D2A4A}
+.ac-me{align-self:flex-end;max-width:85%;background:#B8F03A;color:#0D2A4A;padding:10px 14px;border-radius:18px 18px 4px 18px;font-weight:500}
+.ac-bot{align-self:flex-start;max-width:92%;background:#EEF6FE;color:#0D2A4A;padding:10px;border-radius:18px 18px 18px 4px;display:flex;flex-direction:column;gap:8px}
+.ac-frame{width:210px;aspect-ratio:3/4;border-radius:14px;overflow:hidden;position:relative;background:#0D2A4A}
+.ac-track{display:flex;height:100%;width:400%;animation:acSlide 10s infinite cubic-bezier(.7,0,.3,1)}
+.ac-slide{width:25%;height:100%;box-sizing:border-box;padding:18px 16px;display:flex;flex-direction:column;justify-content:space-between;font-family:Unbounded,sans-serif;font-weight:700;color:#FFFFFF;position:relative;overflow:hidden}
+.ac-slide .ac-big{font-size:19px;line-height:1.15}
+.ac-slide .ac-small{font-family:Manrope,sans-serif;font-weight:700;font-size:11px;opacity:.85}
+.ac-slide .ac-pop{display:inline-block;animation:acPop 2.5s infinite ease-in-out}
+.ac-s1{background:linear-gradient(160deg,#0D2A4A 0%,#1670C2 100%)}
+.ac-s2{background:linear-gradient(160deg,#B8F03A 0%,#7FD61F 100%);color:#0D2A4A}
+.ac-s3{background:linear-gradient(160deg,#FF5A36 0%,#FF9A5A 100%)}
+.ac-s4{background:linear-gradient(160deg,#1670C2 0%,#0D2A4A 100%)}
+.ac-orb{position:absolute;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.35) 0%,rgba(255,255,255,0) 70%);right:-30px;bottom:-30px;animation:acFloat 4s infinite ease-in-out}
+.ac-dots{display:flex;gap:5px;justify-content:center}
+.ac-dots i{width:6px;height:6px;border-radius:50%;background:#BFD9EF;animation:acDot 10s infinite}
+.ac-dots i:nth-child(2){animation-delay:2.5s}.ac-dots i:nth-child(3){animation-delay:5s}.ac-dots i:nth-child(4){animation-delay:7.5s}
+@keyframes acSlide{0%,20%{transform:translateX(0)}25%,45%{transform:translateX(-25%)}50%,70%{transform:translateX(-50%)}75%,95%{transform:translateX(-75%)}100%{transform:translateX(0)}}
+@keyframes acPop{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+@keyframes acFloat{0%,100%{transform:translate(0,0)}50%{transform:translate(-14px,-18px)}}
+@keyframes acDot{0%,24%{background:#0D2A4A;width:16px;border-radius:4px}25%,100%{background:#BFD9EF;width:6px;border-radius:50%}}
+@media (prefers-reduced-motion:reduce){.ac-track,.ac-pop,.ac-orb,.ac-dots i{animation:none}}
 
 </style>
 </head>
@@ -88,7 +113,31 @@
 <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
 <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: baseline">
 <h2 style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 700; font-size: clamp(28px, 3.4vw, 44px); line-height: 1.15">Бонусы</h2>
-<span style="background: #B8F03A; color: #0D2A4A; font-weight: 700; font-size: 14px; padding: 6px 14px; border-radius: 999px">6 штук в подарок</span>
+<span style="background: #B8F03A; color: #0D2A4A; font-weight: 700; font-size: 14px; padding: 6px 14px; border-radius: 999px">7 штук в подарок</span>
+</div>
+<div style="position: relative; overflow: hidden; background: linear-gradient(135deg, #0D2A4A 0%, #14467A 60%, #1670C2 100%); border-radius: 36px; padding: clamp(28px, 4vw, 44px) clamp(22px, 3.5vw, 36px); display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: space-between">
+<div aria-hidden="true" style="position: absolute; top: -120px; right: 10%; width: 380px; height: 380px; border-radius: 50%; background: radial-gradient(circle, rgba(184,240,58,0.35) 0%, rgba(184,240,58,0) 70%)"></div>
+<div style="position: relative; flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 18px; color: #FFFFFF">
+<div style="display: flex; flex-wrap: wrap; gap: 10px"><span style="background: #B8F03A; color: #0D2A4A; font-size: 13px; font-weight: 700; padding: 6px 14px; border-radius: 999px">Новый бонус</span><span style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); color: #FFFFFF; font-size: 13px; font-weight: 700; padding: 6px 14px; border-radius: 999px">🔒 Секретные промпты</span></div>
+<h3 style="margin: 0; font-family: Unbounded, sans-serif; font-weight: 700; font-size: clamp(22px, 2.6vw, 34px); line-height: 1.2; overflow-wrap: break-word">Трендовые анимированные карусели прямо в чате ИИ-продюсера</h3>
+<p style="margin: 0; font-size: 18px; color: #D6E8F8; max-width: 520px">Даю секретные промпты: вставляешь их в чат своего продюсера, и он сам собирает анимированную карусель в тренде. Без дизайнера и без сторонних программ.</p>
+</div>
+<div style="position: relative; flex: 1 1 300px; display: flex; justify-content: center">
+<div class="ac-chat" aria-label="Пример: ИИ-продюсер прямо в чате присылает анимированную карусель" role="img">
+<div class="ac-head"><div class="ac-ava">ИИ</div><div><div style="font-weight: 700; color: #0D2A4A">ИИ-продюсер</div><div style="font-size: 12px; color: #3D5876">в сети</div></div></div>
+<div class="ac-me">Сделай трендовую карусель: 3 ошибки в блоге</div>
+<div class="ac-bot">
+<div>Готово ✨ Листай</div>
+<div class="ac-frame"><div class="ac-track">
+<div class="ac-slide ac-s1"><div class="ac-orb"></div><span class="ac-small">1 / 4</span><span class="ac-big">3 ошибки, из‑за которых <span class="ac-pop" style="color: #B8F03A">блог стоит</span></span><span class="ac-small">листай →</span></div>
+<div class="ac-slide ac-s2"><div class="ac-orb"></div><span class="ac-small">Ошибка 1</span><span class="ac-big">Пишешь <span class="ac-pop">для всех</span></span><span class="ac-small">→</span></div>
+<div class="ac-slide ac-s3"><div class="ac-orb"></div><span class="ac-small">Ошибка 2</span><span class="ac-big">Нет <span class="ac-pop">системы</span></span><span class="ac-small">→</span></div>
+<div class="ac-slide ac-s4"><div class="ac-orb"></div><span class="ac-small">Ошибка 3</span><span class="ac-big">Нет <span class="ac-pop" style="color: #B8F03A">призыва</span></span><span class="ac-small">сохрани 💾</span></div>
+</div></div>
+<div class="ac-dots"><i></i><i></i><i></i><i></i></div>
+</div>
+</div>
+</div>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
 <div style="background: linear-gradient(150deg, #D6ECFF 0%, #EAF6FF 100%); border-radius: 32px; padding: 40px 32px; display: flex; flex-direction: column; gap: 12px">
@@ -169,7 +218,7 @@
 <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 17px; text-align: left">
 <li>8 видеоуроков с PDF-инструкциями</li>
 <li>Готовый скилл ИИ-продюсера для ChatGPT</li>
-<li>6 бонусов: монтаж видео, свой мини-продукт, нейрофотосессия и другие</li>
+<li>7 бонусов: анимированные карусели в чате, монтаж видео, свой мини-продукт, нейрофотосессия и другие</li>
 <li>Закрытый канал и ответы на вопросы</li>
 <li>Доступ на 3 месяца</li>
 </ul>
